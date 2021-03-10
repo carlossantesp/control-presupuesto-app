@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import shortid from "shortid";
 import Error from "./Error";
 
 const Formulario = () => {
@@ -13,6 +14,12 @@ const Formulario = () => {
       return;
     }
     setError(false);
+
+    const gasto = {
+      nombre,
+      cantidad,
+      id: shortid.generate(),
+    };
   };
   return (
     <form onSubmit={handleSubmit}>
